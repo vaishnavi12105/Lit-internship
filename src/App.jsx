@@ -1,22 +1,26 @@
-import React from "react"
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Newsletter from './pages/Newsletter'; // ✅ Make sure this path is correct
+import International from './pages/NewsletterPages/International';
+import Domestic from './pages/NewsletterPages/Domestic';
 
-const App = () => {
-  let x = "raman"
-  console.log(x)
-  const changeuser = () => {
-    x="vaishnavi"
-    console.log(x)
-
-
-  }
+function App() {
   return (
-    <div> 
-   
-    <h1>Hello {x}</h1>
-    <button onClick = {changeuser} > change user </button>
-  
-    </div>
-  )
+    <Router>
+      <Routes>
+        {/* Redirect root to newsletter */}
+        <Route path="/" element={<Navigate to="/newsletter" />} />
+
+        {/* Main newsletter route */}
+        <Route path="/newsletter" element={<Newsletter />} />
+
+        {/* Subpages */}
+        <Route path="/international" element={<International />} />
+        <Route path="/domestic" element={<Domestic />} />
+
+       
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
