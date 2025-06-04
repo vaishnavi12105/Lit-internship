@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // Section component displays the title and children components (i.e., the news content)
 const Section = ({ title, children }) => (
   <div className="my-12 w-full max-w-6xl mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-6" style={{ color: 'white' }}>{title}</h2>
+    <h2 className="text-3xl font-bold text-left mb-6" style={{ color: 'white' }}>{title}</h2>
     <div style={{ color: 'white' }}>
       {children}
     </div>
